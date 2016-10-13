@@ -60,7 +60,9 @@ app.use(express.static('public'))
 
 //root route for now. Later can change it to the game page
 app.get('/', function(req,res){
-	res.render('login')
+  if(req.app.locals.loggedIn) res.render('lobby')
+  res.render('login')
+
 })
 
 // RANDOM WORD: let's do this

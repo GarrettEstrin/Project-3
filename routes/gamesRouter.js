@@ -32,10 +32,8 @@ gamesRouter.get('/game/:id', function(req, res){
     console.log(game.rounds[game.rounds.length-1].pics);
     if(req.user.id == game.rounds[game.rounds.length-1].picker._id){
       res.render('game-picker', {game: game, picId: picId})
-      console.log();
     } else{
       res.render('game-player', {game: game, picId: picId})
-      console.log();
     }
   })
 })
